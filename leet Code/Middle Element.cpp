@@ -1,5 +1,4 @@
 #include<bits/stdc++.h>
-
 using namespace std;
 
 struct ListNode
@@ -59,7 +58,6 @@ class Solution{
 };
 
 int main(){
-
     Solution list1;
     ListNode* head1 = 0;
     head1 = list1.Insert(head1,1);
@@ -68,6 +66,7 @@ int main(){
     head1 = list1.Insert(head1,4);
     head1 = list1.Insert(head1,5);
     head1 = list1.Insert(head1,6);
+     head1 = list1.Insert(head1,7);
     list1.Print(head1);
     cout<<endl;
     head1 = list1.middleNode(head1);
