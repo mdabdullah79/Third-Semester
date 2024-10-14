@@ -46,7 +46,6 @@ void rev(){
     while(cur != nullptr){
         next = cur->next;
         cur->next = prev;
-
         prev = cur;
         cur = next; 
 

@@ -7,22 +7,17 @@ struct Node{
 };
 
 Node* insert(Node *start,int x){
+    Node* temp = new Node;
+    temp->data = x;
+    temp->next = 0;
     if(start == 0){
-        start = new Node;
-        start->data = x;
-        start->next = 0;
+        start = temp;
         return start;
     }else{
-        Node* temp = new Node;
-        temp->data = x;
-        temp->next = 0;
-
         Node* t = start;
-
         while(t->next!=0){
             t = t->next;
         }
-
         t->next = temp;
         return start;
     }
@@ -62,10 +57,8 @@ int main(){
 
     Node* list1 = 0;
     list1 = insert(list1,200);
-    list1 = insert(list1,300);
-    list1 = insert(list1,400);
     Print(list1);
-    list1 = Del(list1,3);
+    list1 = Del(list1,1);
     cout<<endl;
     Print(list1);
 

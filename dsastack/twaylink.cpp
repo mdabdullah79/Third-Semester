@@ -26,8 +26,37 @@ void addfirst(int x){
     head = nn;
 }
 
-void Print(bool x){
+void addlast(int x){
+    if(head==0){
+        addfirst(x);
+    }
+    Node* nn = new Node;
+    nn->data = x;
+    nn->prev = tail;
+    nn->next = 0;
 
+    tail->next = nn;
+    tail = nn;
+    
+}
+
+void Insert(int pos,int x){
+     Node* nm =head;
+     Node* preve;
+      for(int i=1;i<pos;i++){
+        preve = nm;
+        nm = nm->next;
+    }
+    Node* nn = new Node;
+    nn->data = x;
+    nn->next = preve->next;
+    preve->next = nn;
+    nn->prev = preve->prev;
+    
+
+}
+
+void Print(bool x){
     if(x){
         cout<<"L to R: ";
         Node* print = head;
@@ -44,6 +73,28 @@ void Print(bool x){
             print = print->prev;
         }
         cout<<print->data<<" ";
+    }
+}
+
+void Del(int pos){
+    if(pos == 1){
+        Node* nn = head;
+        head = head->next;
+        head->prev = 0;
+        delete nn;
+    }else{
+        Node* nn = head;
+        Node* preve;
+        Node* rear;
+        for(int i=1;i<pos;i++){
+            preve = nn;
+            nn = nn->next;
+        }
+        rear = nn;
+        nn = nn->next;
+        preve->next = nn;
+        nn->prev = rear->prev;
+        delete rear;
     }
 }
 
@@ -68,8 +119,14 @@ int main(){
     addfirst(22);
     addfirst(26);
     addfirst(27);
+    addfirst(29);
+    addfirst(28);
     Print(1);
     cout<<endl;
-    Print(0);
+    Del(3);
+    Print(1);
+
+    // Insert(3,10);
+    // Print(1);
     return 0;
 }
