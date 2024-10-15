@@ -68,6 +68,7 @@ void printlink(){
         }
         cout<<(*temp).data<<" ";
 }
+
 int main(){
     
     insert(3);

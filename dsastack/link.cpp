@@ -5,9 +5,9 @@ struct Node
     int data;
     Node* next;
 };
-Node* head = 0;
+Node* head1 = 0;
 int sz = 0;
-void insert(int x){
+Node* insert(int x, Node *start){
 
     if(head == 0){
         head = new Node;

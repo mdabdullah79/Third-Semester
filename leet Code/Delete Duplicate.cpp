@@ -31,9 +31,7 @@ class Solution{
            }
             fixed = fixed->next;
         }
-       
-         
-           
+
         
         return head;
     }
