@@ -14,7 +14,7 @@ int main(){
         }else if(!st.empty()){
             st.pop();
         }else{
-            flag =1;
+            flag = 1;
             break;
         }
     }

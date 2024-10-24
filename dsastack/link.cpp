@@ -5,7 +5,7 @@ struct Node
     int data;
     Node* next;
 };
-Node* head1 = 0;
+Node* head = 0;
 int sz = 0;
 Node* insert(int x, Node *start){
 

@@ -9,33 +9,23 @@ struct ListNode
 
 class Solution{
     public:
-     ListNode* rotateRight(ListNode* head,int k){
-        ListNode* tail=head;
-        ListNode* prev;
+     bool isPalindrome(ListNode* head){
+        ListNode* head1 = head;
+        ListNode* tail = head;
         int n = Size(head);
-        if(k>n && n!=0){
-            int m = k;
-            k = k/n;
-            k = k*n;
-            k = (m-k)+n;
+        vector<int> arr(n);
+        for(int i=0;i<n;i++){
+            arr[i] = head1->val;
+            head1 = head1->next;
         }
-        
-       if(head==0 || head->next==0){
-            return head;
-        }else{
-    while (k--){
-        while (tail->next!=0)
-        {
-            prev = tail;
-            tail = tail->next;
+        int j = n-1;
+         for(int i=0;i<n/2;i++){
+            if(arr[i]!=arr[j]){
+                return false;
+            }
+            j--;
         }
-        prev->next = 0;
-        tail->next = head;
-        head = tail;
-        }
-        
-       return head;
-    }
+        return true;
         
     }
     int Size(ListNode* head){
@@ -66,27 +56,27 @@ class Solution{
     }
     void Print(ListNode* head){
         ListNode* print = head;
-        while (print->next!=0)
+        while (print!=nullptr)
         {
             cout<<print->val<<" ";
             print = print->next;
         }
-        cout<<print->val<<" ";
         
     }
 };
 
 int main(){
-    Solution list1;
+    Solution list1,list2;
     ListNode* head1 = 0;
 
-    head1 = list1.Insert(head1,1);
     head1 = list1.Insert(head1,2);
     head1 = list1.Insert(head1,3);
-    list1.Print(head1);
+    head1 = list1.Insert(head1,3);
+    head1 = list1.Insert(head1,3);
+    head1 = list1.Insert(head1,2);
+    bool n =  list1.isPalindrome(head1);
     cout<<endl;
-    head1 = list1.rotateRight(head1,2000000000);
-    list1.Print(head1);
+    cout<<n;
 
     return 0;
 }

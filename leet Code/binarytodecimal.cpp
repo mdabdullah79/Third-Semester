@@ -9,34 +9,18 @@ struct ListNode
 
 class Solution{
     public:
-     ListNode* rotateRight(ListNode* head,int k){
-        ListNode* tail=head;
-        ListNode* prev;
-        int n = Size(head);
-        if(k>n && n!=0){
-            int m = k;
-            k = k/n;
-            k = k*n;
-            k = (m-k)+n;
-        }
-        
-       if(head==0 || head->next==0){
-            return head;
-        }else{
-    while (k--){
-        while (tail->next!=0)
+     int getDecimalValue(ListNode* head){
+        ListNode* deci = head;
+        int sz = Size(head);
+        sz = sz-1;
+        int decimal = 0;
+        while (deci!=nullptr)
         {
-            prev = tail;
-            tail = tail->next;
+            decimal = decimal + (deci->val*pow(2,sz));
+            sz--;
+            deci = deci->next;
         }
-        prev->next = 0;
-        tail->next = head;
-        head = tail;
-        }
-        
-       return head;
-    }
-        
+        return decimal;
     }
     int Size(ListNode* head){
         ListNode *sz = head;
@@ -77,16 +61,14 @@ class Solution{
 };
 
 int main(){
-    Solution list1;
+    Solution list1,list2;
     ListNode* head1 = 0;
 
     head1 = list1.Insert(head1,1);
-    head1 = list1.Insert(head1,2);
-    head1 = list1.Insert(head1,3);
-    list1.Print(head1);
-    cout<<endl;
-    head1 = list1.rotateRight(head1,2000000000);
-    list1.Print(head1);
+    head1 = list1.Insert(head1,0);
+    head1 = list1.Insert(head1,1);
+    int n = list1.getDecimalValue(head1);
+    cout<<n<<endl;
 
     return 0;
 }
