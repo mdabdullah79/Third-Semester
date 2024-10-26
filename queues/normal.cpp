@@ -11,7 +11,9 @@ int main(){
     a.push(5);
     a.push(5);
     cout<<a.front();
-   
+
+    deque <int> ar;
+    ar.   
 
     return 0;
 }
