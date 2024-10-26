@@ -222,6 +222,7 @@ bool outer_shell_0only(int arr[][100],int row,int column){
     return true;
 }
 
+//Calculate the determinant of a 3x3 matrix.
 int determinant_of_3x3matrix(int a[][100]){
         int det1 = a[0][0]*((a[1][1]*a[2][2])+(a[2][1]*a[1][2])); 
         int det2 = a[0][1]*((a[1][0]*a[2][2])+(a[2][0]*a[1][2])); 
