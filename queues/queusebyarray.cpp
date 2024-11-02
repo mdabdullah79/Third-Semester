@@ -36,7 +36,8 @@ public:
             cout << "Underflow" << endl;
             return;
         }
-        if(front==rear){
+        if (front == rear)
+        {
             front = 0;
             rear = 0;
             return;
