@@ -6,6 +6,7 @@ struct Node
    int data;
    int piro;
    Node* next;
+   Node* prev;
 };
 Node* head = 0;
 

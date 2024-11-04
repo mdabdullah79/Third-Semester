@@ -1,3 +1,5 @@
+//Marge Two arry
+
 #include<bits/stdc++.h>
 using namespace std;
 int Marge(int A[],int nA,int B[],int nB,int C[],int nC){

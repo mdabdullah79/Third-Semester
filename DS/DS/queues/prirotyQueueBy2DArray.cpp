@@ -42,16 +42,13 @@ void Delete(){
 }
 void Display(){
     for(int i=1;i<=max_sz;i++){
-        
             for(int j=1;j<=max_sz;j++){
             if(Queue[i][j]==0){
                 cout<<"    ";
             }else{
                  cout<<Queue[i][j]<<" ";
             }
-           
         }
-        
         cout<<endl;
     }
 }

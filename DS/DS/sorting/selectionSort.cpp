@@ -29,9 +29,9 @@ int main(){
     int arr[100];
     int n;
     cin>>n;
-    // for(int i=1;i<=n;i++){
-    //     cin>>arr[i];
-    // }
+    for(int i=1;i<=n;i++){
+        cin>>arr[i];
+    }
    string st;
    cin>>st;
     for(int k=0;k<n;k++){
@@ -39,9 +39,9 @@ int main(){
         swap(st[k],st[j]);
     }
 
-    // for(int i=1;i<=n;i++){
-    //     cout<<arr[i]<<" ";
-    // }
+    for(int i=1;i<=n;i++){
+        cout<<arr[i]<<" ";
+    }
 
    cout<<st;
 

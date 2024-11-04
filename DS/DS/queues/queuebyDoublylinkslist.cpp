@@ -7,14 +7,13 @@ class Node{
     Node(int val){
         this->val = val;
         this->next = NULL;
-        
+        this->prev = NULL;
     }
 
 };
 
 int main(){
-    queue <int> a;
-    cout<<a.back();
+
 
     return 0;
 }
