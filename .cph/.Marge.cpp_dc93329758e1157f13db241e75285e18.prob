@@ -1,0 +1,1 @@
+{"name":"Local: Marge","url":"d:\\0.CSE\\03.Third\\DSA\\CODE\\Marge.cpp","tests":[{"id":1732540207871,"input":"8\n1 5 2 3 4 7 6 8","output":""},{"id":1732540252602,"input":"8\n1 2 3 4 5 6 7 8","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\0.CSE\\03.Third\\DSA\\CODE\\Marge.cpp","group":"local","local":true}

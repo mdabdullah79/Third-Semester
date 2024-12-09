@@ -13,7 +13,7 @@ class Queue:
             print("The Queue is Empty")
         else:
             print(f"{self.queue[0]} Enqueue From Queue")
-            self.stack.pop()
+            self.queue.pop()
     def front(self):
         return self.queue[0]
     def back(self):

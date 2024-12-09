@@ -1,0 +1,1 @@
+{"name":"Local: SelectioSort","url":"d:\\0.CSE\\03.Third\\DSA\\CODE\\SelectioSort.cpp","tests":[{"id":1730814143630,"input":"5\n10 12 16 17 15","output":""},{"id":1730814240129,"input":"10\n12 15 11 10 25 60 11 17 11 20","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\0.CSE\\03.Third\\DSA\\CODE\\SelectioSort.cpp","group":"local","local":true}
