@@ -69,6 +69,7 @@ int main(){
     h.Insert(60);
     h.Insert(55);
     h.Insert(77);
+    h.Sort();
 
     //h.Sort();
 
