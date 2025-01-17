@@ -57,6 +57,7 @@ int main(){
     cq.Push(10,3);
     cq.Push(11,1);
     cq.Push(12,2);
+    cq.Push(13,10);
     cq.Display();
 
     return 0;

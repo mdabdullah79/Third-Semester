@@ -92,16 +92,9 @@ public:
 
 int main(){
 
-    Heap h;
-    h.Insert(30);
-    h.Insert(20);
-    h.Insert(25);
-    h.Insert(15);
-    h.Insert(6);
-    h.Insert(5);
-    h.Insert(3);
-    
-    h.Sort();
+    if('A'>'B'){
+        cout<<1;
+    }
     
     return 0;
 }

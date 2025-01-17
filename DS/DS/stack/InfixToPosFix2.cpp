@@ -103,7 +103,7 @@ int main(){
 //     cout<<P[i];
 //    }
     cout<<P<<endl;;
-    cout<<ValueOfPosfix(P);
+    // cout<<ValueOfPosfix(P);
 
 
 

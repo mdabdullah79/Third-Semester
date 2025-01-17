@@ -1,10 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
-
 int main(){
-
     int r1,c1,r2,c2;
 
     cin>>r1>>c1;
@@ -15,7 +12,7 @@ int main(){
     int arr2[100][100];
 
     if(c1!=r2){
-        cout<<"ERROR";
+        cout<<"Matrix A column and B row amount need to be the same";
     }else{
         for(int i=0;i<r1;i++){
         for(int j=0;j<c1;j++){

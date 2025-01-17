@@ -2,33 +2,35 @@
 using namespace std;
 
 
-int VOP(string s){
+int ValueOfPosfix(string s){
+    int j =0;
     stack<int> st;
-    int sz = s.size();
-    s[sz] = ')';
-    int i = 0,num;
-    while (s[i]!=')')
-    {
-        cout<<s[i];
+    int num;
+    s[s.size()] = ')';
+    int i = 0;
+    while(s[i]!=')'){
         if(isdigit(s[i])){
-            num = s[i]-'0';
+            num = s[i] - '0';
             st.push(num);
-        }else if(s[i]=='+' || s[i]=='-' || s[i]=='*' || s[i]=='/'){
-            int a = st.top();
-            st.pop();
+        }else if (s[i]=='+' || s[i]=='-' || s[i]=='*' || s[i]=='/'){
             int b = st.top();
-            st.pop();
+                st.pop();
+                int a = st.top();
+                st.pop();
             if(s[i]=='+'){
                 num = a+b;
                 st.push(num);
             }else if(s[i]=='-'){
-                num = a+b;
+                num = a-b;
                 st.push(num);
             }else if(s[i]=='*'){
-                num = a+b;
+                num = a*b;
                 st.push(num);
             }else if(s[i]=='/'){
-                num = a+b;
+                num = a/b;
+                st.push(num);
+            }else if(s[i]=='^'){
+                num =pow(a,b);
                 st.push(num);
             }
         }
@@ -42,6 +44,6 @@ int main(){
     
     string s;
     cin>>s;
-    cout<<VOP(s);
+    cout<<ValueOfPosfix(s);
     return 0;
 }
