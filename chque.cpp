@@ -1,88 +1,109 @@
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
-// Node structure for the linked list
-struct Node {
+struct node
+{
     int data;
     int priority;
-    Node* next;
+    node* next;
 };
 
-// Function to create a new node with given data and priority
-Node* newNode(int data, int priority) {
-    Node* temp = new Node();
-    temp->data = data;
-    temp->priority = priority;
-    temp->next = nullptr;
-    return temp;
-}
+class Priority_Queue
+{
+    node* Front;
 
-// Function to insert a new node according to its priority (lower number means higher priority)
-Node* enqueue(Node* head, int data, int priority) {
-    Node* temp = newNode(data, priority);
+public:
+    Priority_Queue()
+    {
+        Front = nullptr;
+    }
+    bool isEmpty()
+    {
+        return Front==nullptr;
+    }
 
-    // If the head node has a higher or equal priority value, insert at the start
-    if (head == nullptr || head->priority > priority) {
-        temp->next = head;
-        head = temp;
-    } else {
-        // Traverse the list to find the insertion point
-        Node* current = head;
-        while (current->next != nullptr && current->next->priority <= priority) {
+    void enqueued(int data,int priority)
+    {
+        node* temp = new node;
+        temp->data = data;
+        temp->priority = priority;
+        temp->next = nullptr;
+
+        if(isEmpty() || priority < Front->priority)  /// If Current priority is Higher;
+        {
+            temp->next = Front;
+            Front = temp;
+        }
+        else
+        {
+            node* current = Front;
+            while(current->next!=NULL && current->next->priority <= priority)
+            {
+
+                current = current->next;
+            }
+            temp->next = current->next;
+            current->next = temp;
+        }
+
+        cout << "Enqueued: " << data << " with priority: " << priority << endl;
+
+    }
+
+    void Dequeued()
+    {
+        if(isEmpty())
+        {
+            cout << "Priority Queue is empty" << endl;
+            return;
+        }
+
+        int value = Front->data;
+        node* temp = Front;
+        Front = Front->next;
+        delete temp;
+
+        cout << "Dequeued value: " << value << endl;
+    }
+
+    void display()
+    {
+        if (isEmpty())
+        {
+            cout << "Priority Queue is empty" << endl;
+            return;
+        }
+
+        node* current = Front;
+        cout << "Priority Queue elements (from Front to rear): ";
+        while (current != nullptr)
+        {
+            cout << "(" << current->data << ", " << current->priority << ") ";
             current = current->next;
         }
-        temp->next = current->next;
-        current->next = temp;
+        cout << endl;
     }
-    return head;
-}
 
-// Function to remove the highest priority node from the list
-Node* dequeue(Node* head) {
-    if (head == nullptr) {
-        cout << "Queue is empty.\n";
-        return nullptr;
-    }
-    Node* temp = head;
-    head = head->next;
-    cout << "Removed element: " << temp->data << " with priority " << temp->priority << endl;
-    delete temp;
-    return head;
-}
 
-// Function to display the priority queue
-void displayQueue(Node* head) {
-    if (head == nullptr) {
-        cout << "Queue is empty.\n";
-        return;
-    }
-    cout << "Priority Queue: ";
-    while (head != nullptr) {
-        cout << "(" << head->data << ", priority: " << head->priority << ") ";
-        head = head->next;
-    }
-    cout << endl;
-}
 
-int main() {
-    Node* pq = nullptr;
+};
 
-    // Inserting elements into the priority queue
-    pq = enqueue(pq, 10, 3);
-    pq = enqueue(pq, 20, 1);
-    pq = enqueue(pq, 30, 4);
-    pq = enqueue(pq, 40, 2);
-     pq = enqueue(pq, 100, 2);
+int main(){
+    Priority_Queue obj;
 
-    // Displaying the priority queue
-    displayQueue(pq);
+obj.enqueued(10,2);
+obj.enqueued(11,3);
+obj.enqueued(12,6);
+obj.enqueued(13,20);
+obj.enqueued(19,3);
 
-    // Removing elements from the priority queue
-    pq = dequeue(pq);
-    displayQueue(pq);
+cout << endl << endl;
+obj.display();
 
-    pq = dequeue(pq);
-    displayQueue(pq);
+obj.Dequeued();
+cout << endl << endl;
+obj.display();
 
-    return 0;
+
+
 }

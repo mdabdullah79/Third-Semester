@@ -1,24 +1,31 @@
-//Slection Sort
-//Time Complecity:
+//MARGE SORT
 #include<bits/stdc++.h>
 using namespace std;
-int MinEl(int arr[],int n,int k){
-    int min = arr[k];
-    int loc = k;
-    for(int j=k+1;j<=n;j++){
-        if(min>arr[j]){
-            min = arr[j];
-            loc = j;
-        }
-    }
-    return loc;
-}
-int main(){
-    string s;
-    cin>>s;
-    sort(s.begin(),s.end());
-    cout<<s;
-   
-   
+// class Solution {
+// public:
+//     int calPoints(vector<string>& operations) {
+//         vector<int> arr;
+//         for(string i: operations){
+//             if()
+//         }
 
+//     }
+// };
+
+int main(){
+
+    vector<string> ops = {"5", "-3", "+", "D", "C"};
+
+    // string s;
+    // getline(cin,s);
+    // op.push_back(s);
+
+    for(auto i:ops){
+        cout<<i;
+    }
+
+   
+    
+    
+    return 0;
 }

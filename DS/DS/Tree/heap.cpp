@@ -2,7 +2,6 @@
 using namespace std;
 
 class Heap{
-
     int Size = 0;
     int heap[100];
     public:

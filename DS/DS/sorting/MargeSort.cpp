@@ -2,7 +2,7 @@
 //Time Complecity:
 #include<bits/stdc++.h>
 using namespace std;
-void Mage(int arr[],int l,int mid, int r){
+void Marge(int arr[],int l,int mid, int r){
     int nA = mid-l+1;
     int nB = r-mid;
     int A[nA];
@@ -42,7 +42,7 @@ void MargeSort(int arr[],int l,int r){
         int mid = (l+r)/2;
         MargeSort(arr,l,mid);
         MargeSort(arr,mid+1,r);
-        Mage(arr,l,mid,r);
+        Marge(arr,l,mid,r);
     }
 }
 int main(){
@@ -52,7 +52,7 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
-   MargeSort(arr,0,n);
+   MargeSort(arr,0,n-1);
 
     for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
