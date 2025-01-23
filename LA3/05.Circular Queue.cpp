@@ -23,9 +23,20 @@ class CQ{
     }
     arr[rear] = item;
     }
+    void Delete(){
+        if(front==0){
+            cout<<"Underflow"<<endl;
+            return;
+        }
 
-    voi
-
+        if(front==rear){
+            front=rear=0;
+        }else if(front==max_sz){
+            front = 1;
+        }else{
+            front++;
+        }
+    }
     void Display()
     {
         if (front == 0)
@@ -68,6 +79,9 @@ int main(){
     ob.Insert(30);
     ob.Insert(40);
 
+    ob.Display();
+    ob.Delete();
+    cout<<endl;
     ob.Display();
 
 

@@ -57,6 +57,7 @@ int main(){
     Insert(150,2);
     Insert(140,5);
     Insert(14,1);
+    Insert(14,10);
     
 
     Display();
